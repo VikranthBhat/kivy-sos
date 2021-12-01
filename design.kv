@@ -1,0 +1,36 @@
+<LoginScreen>:
+    cols: 1
+    GridLayout:
+        cols: 1
+        Label:
+            text: "Hi Vikranth! Need to put some efforts"
+        Button:
+            text: "Set Message"
+            on_press: root.setMessage()
+        Button:
+            text: "Send SOS"
+            on_press: root.sendSOS()
+        Label:
+            id: status
+            text: ""
+
+<SetMessage>:
+    cols: 1
+    GridLayout:
+        cols: 1
+        Label:
+            text: "Set Message"
+        TextInput:
+            id: message
+            hint_text: "Set your SOS message"
+        Button:
+            text: "Save Message"
+            on_press: root.save_message(root.ids.message.text)
+
+
+
+<RootWidget>:
+    LoginScreen:
+        name: "login_screen"
+    SetMessage:
+        name: "set message"
