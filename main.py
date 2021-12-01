@@ -1,7 +1,7 @@
 from kivy.app import  App
 from kivy.lang import Builder
 from kivy.uix.screenmanager import ScreenManager, Screen
-from plyer import vibrator,camera
+from plyer import vibrator
 
 Builder.load_file("design.kv")
 
@@ -12,8 +12,9 @@ class LoginScreen(Screen):
     def sendSOS(self):
         print("SOS sent")
         self.ids.status.text = "SOS sent"
-        vibrator.vibrate(10)
-        camera.take_picture()
+        vibrator.vibrate(time=10)
+
+        # Camera().take_picture("newfile.jpg")
 
 class SetMessage(Screen):
     def save_message(self, message_data):
